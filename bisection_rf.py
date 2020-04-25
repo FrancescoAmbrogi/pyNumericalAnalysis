@@ -4,6 +4,8 @@ It is very similar to the bisection method and it is know as
 Regula Falsi method.
 """
 import time
+from matplotlib import pyplot as plt
+import numpy as np
 
 t = time.time()
 def bisection_rf(f,x1,x2,tol=1.0E-6,ilim=100):
@@ -38,7 +40,7 @@ def bisection_rf(f,x1,x2,tol=1.0E-6,ilim=100):
 
 # Here we define the function we want to evaluate the root of
 def givenf(x):
-    f = 2*x**2 - 5*x + 3
+    f = x**3 - 6*x**2 + 11*x - 6
     return f
 
 # Here instead we call x1 and x2, the two guesses, from the user:
@@ -51,5 +53,15 @@ sol, nits = bisection_rf(givenf, x1, x2)
 print('Number of iterations: %d' % nits)
 print('The solution found is: %0.3f' % sol)
 print('The calculation took: ' + str('{0:2f}'.format(time.time() -t)) + 's\n')
+
+# At the very end, let us plot the function to see its behavior
+t = np.linspace(0,4,101)
+psi = givenf(t)
+
+plt.figure(11,figsize=(22,14), dpi=100)
+plt.grid(True)
+plt.plot(t,psi,'-ko')
+plt.xlabel('Value of t', fontsize=20)
+plt.ylabel('Value of y', fontsize=20)
 
 

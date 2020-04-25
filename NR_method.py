@@ -13,7 +13,7 @@ import time
 from matplotlib import pyplot as plt
 from math import sin, cos
 
-x = 0 # initial guess
+x = float(input("Enter the initial guess: ")) # initial guess x = 0
 eps = 10e-06 # tolerance
 t = time.time()
 plt.figure(11,figsize=(22,14), dpi=100)
