@@ -26,7 +26,7 @@ def givenf(x):
 
 # Choose 2 initial guesses
 x1 = float(input("Enter the first guess x1: "))  # 0
-x2 = float(input("Enter the first guess x1: "))  # 1.4
+x2 = float(input("Enter the second guess x2: "))  # 1.4
 # We have to evaluate the function in x1 and x2 to see it it change sign
 y1 = givenf(x1)
 y2 = givenf(x2)
