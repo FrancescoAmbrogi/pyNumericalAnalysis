@@ -10,15 +10,15 @@ from FraFunctions import plot2D
 
 time = [0, 20, 40, 60, 80, 100]
 temp = [26.0, 48.6, 61.6, 71.2, 74.8, 75.2]
-temp2 = [25.0, 44.6, 67.6, 75.2, 80.8, 64.2]
+temp2 = [30.0, 15.6, 58.6, 77.2, 82.8, 64.2]
 
 d = {'color':'black',
      'marker':'s'}
-c = {'color':'red',
-     'marker':'s'}
+c = {'color':'magenta',
+     'marker':'d'}
 
-plot2D(time, temp2, **c)
-plot2D(time, temp, xlabel='Time', ylabel='Temp', **d)
+plot2D(time, temp, **d)
+plot2D(time, temp2, xlabel='Time', ylabel='Temperature', **c)
 
 
 # In the linear interpolation method assumed that the behavior
