@@ -7,10 +7,13 @@ The most used FDM methods are:
     1. Forward differences
     2. Backward differences
     3. Central differences
+
+In this program the computation is carried out taking uniform 
+grid size h.
 """
 import Plottings as myPlot
 import numpy as np
-from math import sin,cos,pi
+from math import pi
 
 # This is the numerical domain
 x_sin = np.linspace(0,2*pi,101)
@@ -29,12 +32,21 @@ def c_d1dx(f,x,h):
     c_d1dx = (f(x+h) - f(x-h)) / (2*h)
     return c_d1dx
 
-myPlot.plot1D(x_sin, np.sin(x_sin), 3, label = 'sin(x)',xlabel='Angle [rad]', ylabel = 'f(x)', **myPlot.myColor(1))
-myPlot.plot1D(x_sin, f_d1dx(f1,x_sin,0.5), 3, label='FD', xlabel='Angle [rad]', ylabel = 'f(x)', **myPlot.myColor(2))
-myPlot.plot1D(x_sin, b_d1dx(f1,x_sin,0.5), 3, label='BD', xlabel='Angle [rad]', ylabel = 'f(x)', **myPlot.myColor(3))
-myPlot.plot1D(x_sin, c_d1dx(f1,x_sin,0.5), 3, label='CD', xlabel='Angle [rad]', ylabel = 'f(x)', **myPlot.myColor(4))
-myPlot.plot1D(x_sin, np.cos(x_sin), 3, 'sine_deriv.png', label='cos(x)', xlabel='Angle [rad]', ylabel = 'f(x)', **myPlot.myColor(5))
+def c_d2dx(f,x,h):
+    c_d2dx = (f(x+h) - 2*f(x) + f(x-h)) / h**2
+    return c_d2dx
 
+# Define the grid size
+dx = 0.01
+
+myPlot.plot1D(x_sin, np.sin(x_sin), 1, label = 'sin(x)',xlabel='Angle [rad]', ylabel = 'f(x)', **myPlot.myColor(1))
+myPlot.plot1D(x_sin, f_d1dx(f1,x_sin,dx), 1, label='FD', xlabel='Angle [rad]', ylabel = 'f(x)', **myPlot.myColor(2))
+myPlot.plot1D(x_sin, b_d1dx(f1,x_sin,dx), 1, label='BD', xlabel='Angle [rad]', ylabel = 'f(x)', **myPlot.myColor(3))
+myPlot.plot1D(x_sin, c_d1dx(f1,x_sin,dx), 1, label='CD', xlabel='Angle [rad]', ylabel = 'f(x)', **myPlot.myColor(4))
+myPlot.plot1D(x_sin, np.cos(x_sin), 1, label='cos(x)', xlabel='Angle [rad]', ylabel = 'f(x)', **myPlot.myColor(5))
+
+myPlot.plot1D(x_sin, -(np.sin(x_sin)), 2, label = '-sin(x)',xlabel='Angle [rad]', ylabel = 'f(x)', **myPlot.myColor(1))
+myPlot.plot1D(x_sin, c_d2dx(f1, x_sin, dx), 2, label='2nd CD', xlabel='Angle [rad]', ylabel = 'f(x)', **myPlot.myColor(2))
 
 
  
