@@ -21,7 +21,7 @@ yex = np.exp(xex**2/2)
 x = 0
 xn = 2
 y = 1 # initial value
-h = 0.5 # step size
+h = 0.01 # step size
 
 n = int((xn - x) / h)
 
