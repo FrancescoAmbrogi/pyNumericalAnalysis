@@ -7,7 +7,7 @@ in Numerical Analysis.
 
 Some of the concepts can be difficult to grasp at first,
 but the main goal here is to understand what the 
-numerical technique is really doing rather than learning
+numerical technique is really doing, rather than learning
 the programming language.
 
 For this reason, I chose a very simple yet powerful 
