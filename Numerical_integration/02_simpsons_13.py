@@ -14,11 +14,13 @@ The Simpson ruule in compact form reads as:
 from math import sin, pi
 
 # Here we define the function we want to integrate
-f = lambda x: x * sin(x)
+#f = lambda x: x * sin(x)     # Function 1
+f = lambda x: 1 / (1 + x)     # Function 2
 
 a = 0
-b = pi / 2
-n = 22 # Remember that the number of division ust be even
+#b = pi / 2     # Function 1
+b = 1           # Function 2
+n = 2 # Remember that the number of division must be even
 
 h = (b - a) / n
 M = (f(a) + f(b))
@@ -33,5 +35,10 @@ I = h / 3 * M
 
 print('The integral = %f' % I)
 # As we notice Simpson's rule is way faster and more accurate that the trapezoidal rule
+
+# Error calculation
+err = ((I-0.693147)/0.693147) * 100
+print('The error in percentage is = %f' % err)
+# Now compare the error with the trapezoidal method: what do you see?
 
 

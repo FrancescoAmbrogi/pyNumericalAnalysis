@@ -7,7 +7,9 @@ given by those two values.
 The repo contains:
 - Trapezoidal rule
 - 1/3 Simpson's rule
-- 3/8 Simpson's rule
 - Double integration
+
+Example is taken from Elementary Numerical Analysis - Kendall
+Example 5.1.1
 
 Enjoy!

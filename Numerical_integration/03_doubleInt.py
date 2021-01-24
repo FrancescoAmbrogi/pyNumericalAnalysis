@@ -18,8 +18,8 @@ ay = -1
 by = 1
 
 # let's also define the number of division for each integral
-nx = 10
-ny = 10
+nx = 2
+ny = 2
 
 hx = (bx - ax)/nx
 hy = (by - ay)/ny
