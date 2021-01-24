@@ -1,10 +1,11 @@
 """
 In this program we implement the secant method
 in the root finding topic.
+
+Solve the example 3.1.1 Elementary Numerical Analysis - Kendall
 """
 # Let us define the function of the secant method
 import time
-from math import cos
 
 t = time.time()
 def sec_method(f, x1, x2, tol, imax):
@@ -21,8 +22,7 @@ def sec_method(f, x1, x2, tol, imax):
 
 # Let us define the function here
 # and lets do it using the lambda function
-f = lambda x: x**3 - 6*x**2 + 11*x - 6
-f2 = lambda x: x - cos(x)
+f = lambda x: x**6 - x -1
 
 # Remember: the secant method will need 2 guesses
 x1 = float(input("Enter the first guess x1: "))
@@ -33,7 +33,7 @@ tol = 1.0E-6
 imax = 100
 
 # Here now, we call the function 
-sol, nit = sec_method(f2, x1, x2, tol, imax)
+sol, nit = sec_method(f, x1, x2, tol, imax)
 
 # here we print the solution on the shell:
 print('Number of iterations: %d' % nit)

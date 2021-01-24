@@ -8,7 +8,7 @@
 
 # Let's solve first equation 3x**2 -5x +2 = 0
 # Analytical solutions: x_1 = 1, x_2 = 2/3
-# Equation: -4x**2 -7x +12 = 0
+# Equation: x**6 -x - 1 = 0
 # It has a solution very close to 1
 '''
 import time
@@ -22,7 +22,8 @@ plt.figure(11,figsize=(22,14), dpi=100)
 plt.grid(True)
 
 for it in range(1,101): # Where it is the counter for iterations
-    x_new = x - (-4*x**2 - 7*x +12)/(-8*x - 7)
+    #x_new = x - (-4*x**2 - 7*x +12)/(-8*x - 7)
+    x_new = x - (x**6 - x - 1)/(5*x**5 - 1)
     
     plt.plot(it, x_new, '-ko')
     plt.plot(it, x, '-ro')

@@ -13,4 +13,7 @@ This repo contains:
 - Newton method.
 - Secant method.
 
+The example solved is taken from:
+Elementary Numerical Analysis - Kendall
+
 Enjoy!

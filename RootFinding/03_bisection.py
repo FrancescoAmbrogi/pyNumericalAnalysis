@@ -1,6 +1,7 @@
 """
 Let us implement now the bisection method for root finding
-Let use it to find the root of the function: f = 2x**2 - 5x + 3
+
+Solve the example 3.1.1 of Kendall
 """
 from matplotlib import pyplot as plt
 import numpy as np
@@ -9,7 +10,7 @@ import time
 # Create an x array
 x = np.linspace(0,2,21)
 # Let us evaluate the function f in x
-f = 2*x**2 - 5*x + 3
+f = x**6 - x - 1
 
 # Let us plot the function f to understand its shape
 plt.figure(11,figsize=(22,14), dpi=100)
@@ -21,15 +22,15 @@ plt.legend(fontsize=26)
 
 # Lets use another way of definying a function
 def givenf(x):
-    f = 2*x**2 - 5*x + 3
+    f = x**6 - x -1
     return f
 
-# We see precisely that this function has two roots 1.0 and 1.5
 # In the bisection method we basically want to enclose one of them with our guesses
+# We know one root is 1 < x1 < 1.5
 
 # Choose 2 initial guesses
 x1 = float(input("Enter the first guess x1: "))  # 0
-x2 = float(input("Enter the second guess x2: "))  # 1.4
+x2 = float(input("Enter the second guess x2: "))  # 1.5
 # We have to evaluate the function in x1 and x2 to see it it change sign
 y1 = givenf(x1)
 y2 = givenf(x2)

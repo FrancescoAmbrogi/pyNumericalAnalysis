@@ -3,8 +3,8 @@ This program belongs to the root finding procedure of numerical analyisis
 It is very similar to the bisection method and it is know as
 Regula Falsi method.
 
-Let-s use it to solve: -4 x**2 -7x +12 = 0
-There is a root [-2, 2]
+Let-s use it to solve the same example: 3.1.1 
+Elementary Numerical Analysis - Kendall
 """
 import time
 from matplotlib import pyplot as plt
@@ -43,7 +43,7 @@ def bisection_rf(f,x1,x2,tol=1.0E-6,ilim=100):
 
 # Here we define the function we want to evaluate the root of
 def givenf(x):
-    f = -4*x**2 - 7*x + 12
+    f = x**6 - x - 1
     return f
 
 # Here instead we call x1 and x2, the two guesses, from the user:
