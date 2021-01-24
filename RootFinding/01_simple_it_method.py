@@ -4,7 +4,6 @@
 """
 This first method uses a for loop
 """
-from math import sqrt
 import time
 from matplotlib import pyplot as plt
 
@@ -24,7 +23,6 @@ t = time.time()
 for it in range(1,101): # Remembere python starts counting from 0
     # Here we write the equation in the compact form, there are two of them
     
-    #x_new = sqrt((5*x - 2)/3)
     x_new = (3*x**2 + 2)/5
     
     plt.subplot(211)
@@ -50,7 +48,7 @@ print('The calculation with for took: ' + str('{0:2f}'.format(time.time() -t)) +
 """
 This second method uses a while loop
 """
-y = 3 # this is now an arbitrary value
+y = 1.5    # this is now an arbitrary value
 y_new = 0 # this is now the initial guess
 yps = 10e-06
 its = 0
@@ -65,7 +63,6 @@ while abs(y_new - y) >= yps: # if this condition is NOT satisfied the loop will 
     its += 1
     y = y_new
     y_new = (3*y**2 + 2)/5
-    #y_new = sqrt((5*y - 2)/3)
     plt.subplot(212)
     plt.grid(True)
     plt.plot(its,y_new,'-m*',its,y,'-b*')
